@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Professional Quote Generator</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #e9e9e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      width: 350px;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: background-color 0.4s ease;
+    }
+
+    #btn {
+      padding: 12px 25px;
+      border: none;
+      background: black;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    /* Button Hover Effect */
+    #btn:hover {
+      background: #333;
+      transform: scale(1.06);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="quoteBox">
+    <h2>Quote of the Moment</h2>
+
+    <p id="quote" style="font-size:18px; margin-top:10px;">
+      Click the button to get a quote
+    </p>
+
+    <button id="btn">New Quote</button>
+  </div>
+
+  <script>
+    // Quotes Array
+    let quotes = [
+      "Success starts with self-discipline.",
+      "Small steps every day lead to big results.",
+      "Focus on progress, not perfection.",
+      "Believe you can, and you're halfway there.",
+      "Stay positive, work hard, make it happen."
+    ];
+
+    // Background colors for quote box
+    let colors = ["#ffefd5", "#e0ffff", "#ffe4e1", "#e6e6fa", "#f0fff0", "#fffacd"];
+
+    // Function to change quote + background color
+    function generateQuote() {
+      let randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+      let randomColorIndex = Math.floor(Math.random() * colors.length);
+
+      // Change quote text
+      document.getElementById("quote").textContent = quotes[randomQuoteIndex];
+
+      // Change background color of quote box
+      document.getElementById("quoteBox").style.backgroundColor = colors[randomColorIndex];
+    }
+
+    // Button event
+    document.getElementById("btn").addEventListener("click", generateQuote);
+  </script>
+
+</body>
+</html>
