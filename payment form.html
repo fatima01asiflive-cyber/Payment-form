@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="paymentForm">
+    <h1>💳 Payment Form</h1>
+
+    <h2>📞 Contact Information</h2>
+
+    <p>Full Name: <input type="text" id="name" required placeholder="Enter your full name"></p>
+
+    <fieldset>
+      <legend>Gender</legend>
+      <p>
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female" required> Female</label>
+      </p>
+    </fieldset>
+
+    <p>Address:
+      <textarea id="address" cols="50" rows="4" placeholder="Enter your address"></textarea>
+    </p>
+
+    <p>Email: * <input type="email" id="email" required placeholder="example@email.com"></p>
+    <p>Zip Code: * <input type="number" id="zipcode" required placeholder="12345"></p>
+
+    <h2>💰 Payment Information</h2>
+    <p>* Required fields must be filled</p>
+
+    <p>
+      Card Type: *
+      <select id="cardType" required>
+        <option value="">-- Select Card Type --</option>
+        <option value="Visa">Visa</option>
+        <option value="Master Card">Master Card</option>
+        <option value="Rupay">Rupay</option>
+      </select>
+    </p>
+
+    <p>Card Number * <input type="number" id="cardNumber" required placeholder="0000 0000 0000 0000"></p>
+    <p>Expiration Date * <input type="date" id="expDate" required></p>
+    <p>CVV * <input type="password" id="cvv" required placeholder="123"></p>
+
+    <div class="buttons">
+      <input type="submit" value="Pay Now" class="btn">
+      <input type="reset" value="Reset Form" class="btn-reset">
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
